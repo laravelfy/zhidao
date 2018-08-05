@@ -1,10 +1,20 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * 用户
+ *
+ * @property integer $id
+ * @property string  $name  名
+ * @property string  $email 邮箱
+ * @property Carbon  $created_at
+ * @property Carbon  $updated_at
+ * @property Carbon  $deleted_at
+ */
 class User extends Authenticatable
 {
     use Notifiable;

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
  * 收藏记录
@@ -25,7 +26,7 @@ class Collect extends BaseModel
     /**
      * 被收藏的对象
      *
-     * @return void
+     * @return MorphTo
      */
     public function collected()
     {

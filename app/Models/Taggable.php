@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
  * 打标签
@@ -27,7 +28,7 @@ class Taggable extends BaseModel
     /**
      * 被打标签的对象
      *
-     * @return void
+     * @return MorphTo
      */
     public function tagged()
     {

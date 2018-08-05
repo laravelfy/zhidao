@@ -33,6 +33,7 @@ class Question extends BaseModel
     use Traits\withCollect;
     use Traits\withFollow;
     use Traits\withStar;
+    use Traits\withTaggable;
 
     protected $fillable = [
         'title',

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
  * 关注记录
@@ -24,7 +25,7 @@ class Star extends BaseModel
     /**
      * 被收藏的对象
      *
-     * @return void
+     * @return MorphTo
      */
     public function stared()
     {

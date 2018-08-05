@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * 答案
@@ -16,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Collection $followers   关注人们
  * @property Collection $stargazers  点赞者们
  * @property Collection $collectors  收藏者们
+ * @property Question   $question    所属问题
  * @property Carbon     $created_at
  * @property Carbon     $updated_at
  * @property Carbon     $deleted_at
@@ -31,4 +33,14 @@ class Answer extends BaseModel
     protected $fillable = [
         'content',
     ];
+
+    /**
+     * 问题
+     *
+     * @return BelongsTo
+     */
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
+    }
 }

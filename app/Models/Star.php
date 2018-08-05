@@ -16,7 +16,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property Question|Ansewer $stared 被关注的对象
  * @property Carbon  $created_at
  * @property Carbon  $updated_at
- * @property Carbon  $deleted_at
  */
 class Star extends BaseModel
 {

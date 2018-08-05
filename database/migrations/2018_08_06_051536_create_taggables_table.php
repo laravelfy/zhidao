@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateTaggablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('taggables', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email', 60)->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->integer('tag_id')->index()->comment = '标签ID';
+            $table->string("taggable_type", 60);
+            $table->integer("taggable_id");
             $table->timestamps();
+            $table->index(["taggable_type", "taggable_id"]);
         });
     }
 
@@ -30,6 +30,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('taggables');
     }
 }

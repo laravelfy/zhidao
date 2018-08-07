@@ -40,6 +40,11 @@ class Question extends BaseModel
         'content',
     ];
 
+    protected $with = [
+        'user',
+        'answers',
+    ];
+
     /**
      * 问题下的答案列表
      *

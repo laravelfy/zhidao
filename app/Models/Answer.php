@@ -34,6 +34,10 @@ class Answer extends BaseModel
         'content',
     ];
 
+    protected $with = [
+        'user',
+    ];
+
     /**
      * 问题
      *
